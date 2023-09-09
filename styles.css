@@ -21,12 +21,16 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  background-color: #fff;
+  background-color: #222;
   color: #222;
 }
 img {
   max-width: 100%;
   height: auto;
+}
+*:focus {
+  outline: 2px dashed #1e90ff;
+  outline-offset: 2px;
 }
 
 /* CONTAINER  */
@@ -118,6 +122,7 @@ img {
   padding: 54px;
   width: 100%;
   max-width: 600px;
+  background-color: #fff;
 }
 .latest-videos-heading {
   margin-top: 0;
@@ -151,7 +156,7 @@ img {
 }
 .item-latest-videos-img {
   width: 160px;
-  height: 90px;
+  height: auto;
   border-radius: 4px;
   object-fit: cover;
 }
@@ -168,6 +173,7 @@ img {
   letter-spacing: 2px;
 }
 .item-latest-videos-link {
+  display: inline-block;
   color: #222;
   text-decoration: none;
 }
@@ -184,37 +190,48 @@ img {
   font-size: 14px;
   line-height: normal;
 }
-.item-latest-videos-published-at {
+.item-latest-videos-meta-item {
   display: flex;
   align-items: center;
+}
+.item-latest-videos-meta-item:not(:last-child){
   margin-right: 24px;
 }
-.item-latest-videos-published-at::before {
+.item-latest-videos-meta-item::before {
   width: 16px;
   height: 16px;
   margin-right: 4px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  content: "";
+}
+.item-latest-videos-meta-item-published-at::before {
   background-image: url("img/icon-clock.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  content: "";
 }
-.item-latest-videos-views {
-  display: flex;
-  align-items: center;
-}
-.item-latest-videos-views::before {
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
+.item-latest-videos-meta-item-views::before {
   background-image: url("img/visibility_black.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  content: "";
 }
 
-
+/* LOAD-MORE-BUTTON  */
+.load-more-button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: normal;
+  background-color: #1e90ff;
+  color: #fff;
+  cursor: pointer;
+}
+.load-more-button:hover {
+  background-color: rgba(30, 144, 255, 0.8)
+}
+.load-more-button:active {
+  background-color: rgba(30, 144, 255, 0.6);
+}
 
 /* RETINA BG  */
 @media
